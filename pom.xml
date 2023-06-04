@@ -31,13 +31,17 @@
                 <artifactId>spotless-maven-plugin</artifactId>
                 <version>2.37.0</version>
                 <configuration>
+                    <upToDateChecking>
+                        <enabled>true</enabled>
+                        <indexFile>${project.basedir}/spotless-index</indexFile>
+                    </upToDateChecking>
                     <java>
                         <toggleOffOn/>
                         <importOrder/>
                         <removeUnusedImports/>
-                        <eclipse>
-                            <version>4.26</version>
-                        </eclipse>
+                        <palantirJavaFormat>
+                            <version>2.27.0</version>
+                        </palantirJavaFormat>
                         <indent>
                             <spaces>true</spaces>
                             <spacesPerTab>4</spacesPerTab>
