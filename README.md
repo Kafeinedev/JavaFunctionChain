@@ -1,1 +1,1 @@
-Fun project to create an utility library to transform java in a functionnal language.
+This is mainly a FUN and learning project. Aiming to make functionnal style programming style in java a little easier.
