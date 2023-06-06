@@ -6,19 +6,20 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.function.Function;
 import org.junit.jupiter.api.Test;
 
-class ChainStartTest {
+class ChainTest {
 
     @Test
     void chainStartTest() {
-        assertTrue(ChainStart.chain() instanceof ChainStart);
+        assertTrue(Chain.start() instanceof Chain);
     }
 
     @Test
     void linkTest() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
         final Function<String, String> f = (final String a) -> a;
-        final var testLink = ChainStart.chain().link(f);
+
+        final var testLink = Chain.start().link(f);
+
         assertTrue(testLink instanceof ChainLink);
-        // No I wont load a library to remove two lines.
         final var field = testLink.getClass().getDeclaredField("link");
         field.setAccessible(true);
         assertEquals(f, field.get(testLink));

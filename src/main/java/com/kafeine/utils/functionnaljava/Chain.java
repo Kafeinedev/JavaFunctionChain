@@ -2,12 +2,12 @@ package com.kafeine.utils.functionnaljava;
 
 import java.util.function.Function;
 
-public final class ChainStart {
+public final class Chain {
 
-    private ChainStart() {}
+    private Chain() {}
 
-    public static ChainStart chain() {
-        return new ChainStart();
+    public static Chain start() {
+        return new Chain();
     }
 
     public <A, R> ChainLink<A, R> link(final Function<A, R> nextLink) {
