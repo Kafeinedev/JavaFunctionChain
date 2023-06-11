@@ -67,4 +67,18 @@ class ChainLinkTest {
         assertEquals(f, func.get(testLink));
         assertEquals(Exception.class, excep.get(testLink));
     }
+
+    @Test
+    void onNullNullValueTest() {
+        assertEquals(
+                "NUL !",
+                Chain.start().link((final String a) -> a).onNull("NUL !").end().apply(null));
+    }
+
+    @Test
+    void onNullNotNullValueTest() {
+        assertEquals(
+                "NOT NUL !",
+                Chain.start().link((final String a) -> a).onNull("NUL !").end().apply("NOT NUL !"));
+    }
 }
