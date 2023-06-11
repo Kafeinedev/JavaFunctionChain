@@ -21,6 +21,15 @@ public final class ChainLink<A, I> {
         return new ExceptionLink<>(link, exception);
     }
 
+    public ChainLink<A, I> onNull(final I alternative) {
+        return new ChainLink<>((final A arg) -> {
+            if (arg != null) {
+                return link.apply(arg);
+            }
+            return alternative;
+        });
+    }
+
     public Function<A, I> end() {
         return link;
     }
